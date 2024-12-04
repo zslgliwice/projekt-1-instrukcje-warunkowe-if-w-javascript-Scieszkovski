@@ -26,6 +26,30 @@
 			var a = document.getElementById('a').value;
 			var b = document.getElementById('b').value;
 			var c = document.getElementById('c').value;
+
+			const wynik = document.getElementById("wynik");
+
+			const min = Math.min(a, b, c);
+			const max = Math.max(a, b, c);
+
+			const beza = Math.abs(a);
+			const bezb = Math.abs(b);
+			const bezc = Math.abs(c);
+
+			const parzystaa = (a % 2 === 0) ? "parzysta" : "nieparzysta";
+			const parzystab = (b % 2 === 0) ? "parzysta" : "nieparzysta";
+			const parzystac = (c % 2 === 0) ? "parzysta" : "nieparzysta";
+
+			wynik.innerHTML = 
+			"<p>Najmniejsza liczba: " + min + "</p>" +
+			"<p>Największa liczba: " + max + "</p>" +
+			"<p>Wartość bezwzględna z a: " + beza + "</p>" +
+			"<p>Wartość bezwzględna z b: " + bezb + "</p>" +
+			"<p>Wartość bezwzględna z c: " + bezc + "</p>" +
+			"<p>Liczba a (" + a + "): " + parzystaa + "</p>" +
+			"<p>Liczba b (" + b + "): " + parzystab + "</p>" +
+			"<p>Liczba c (" + c + "): " + parzystac + "</p>";
+
 			
 			
 		}
