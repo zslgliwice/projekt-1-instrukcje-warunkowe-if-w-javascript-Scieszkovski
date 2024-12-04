@@ -22,6 +22,39 @@
 		function ktora_cwiartka()
 		{
 			
+			const x = parseFloat(document.getElementById("x").value);
+			const y = parseFloat(document.getElementById("y").value);
+			const wynik = document.getElementById("wynik");
+
+			if(x === 0 && y === 0){
+
+				wynik.innerHTML = "Punkt P=(0,0) jest początkiem układu współrzędnych";
+
+			}else if(x === 15 && y === 96){
+
+				wynik.innerHTML = "René Descartes, łac. Renatus Cartesius, po polsku Kartezjusz, (ur. 31 marca 1596 w La Haye en Touraine, zm. 11 lutego 1650 w Sztokholmie) - francuski uczony: matematyk, fizyk i filozof, jeden z najwybitniejszych intelektualistów XVII wieku, uznawany również za ojca filozofii nowożytnej.";
+
+			}else if(x === 0 || y === 0){
+
+				wynik.innerHTML = "Punkt leży na jednej z osi układu";
+
+			}else if(x > 0 && y > 0){
+
+				wynik.innerHTML = "Punkt znajduje się w I ćwiartce";
+
+			}else if(x < 0 && y < 0){
+
+				wynik.innerHTML = "Punkt znajduje się w III ćwiartce";
+				
+			}else if(x < 0 && y > 0){
+
+				wynik.innerHTML = "Punkt znajduje się w II ćwiartce";
+
+			}else if(x > 0 && y < 0){
+
+				wynik.innerHTML = "Punkt znajduje się w IV ćwiartce";
+
+			}
 			
 		}
 
