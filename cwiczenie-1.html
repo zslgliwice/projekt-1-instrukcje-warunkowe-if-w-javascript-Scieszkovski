@@ -1,33 +1,83 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
-
-	<meta charset="utf-8">
-	<title>1 - Instrukcja warunkowa w JavaScript</title>
-	<link href="arkusz-cwiczenia.css" rel="stylesheet">
-	
+    <meta charset="utf-8">
+    <title>1 - Instrukcja warunkowa w JavaScript</title>
+    <link href="arkusz-cwiczenia.css" rel="stylesheet">
 </head>
-
 <body>
+    <label>
+        Podaj numer dnia tygodnia: <input type="number" id="dayNumber" min="1" max="7">
+    </label>
+    <input type="submit" value="Zobacz nazwę dnia" onclick="getDayName()">
+    <div id="wynik"></div>
 
-	<label>
-		Podaj numer dnia tygodnia: <input type="number">
-	</label>
-	
-	<input type="submit" value="Zobacz nazwę dnia" onclick="getDayName()">
+    <script>
+        function getDayName() {
 
-	<div id="wynik"></div>
-	
-	<script>
-	
-		function getDayName()
-		{
-					
-			
+			const Liczba = parseInt(document.getElementById('dayNumber').value);
+			let NumerDnia;
+			let NazwaDnia;
+
+			const wynikElement = document.getElementById('wynik');
+			wynikElement.style.color = '';
+
+			if(Liczba < 1 || Liczba > 7){
+
+				wynikElement.textContent = "To nie jest prawidłowy numer dnia tygodnia!";
+				wynikElement.style.color = "red";
+				return;
+
+			}
+
+			if(Liczba === 1){
+
+				NumerDnia = 'Pierwszy';
+				NazwaDnia = 'Monday - poniedziałek';
+
+			}else if(Liczba === 2){
+
+				NumerDnia = 'Drugi';
+				NazwaDnia = 'Tuesday - wtorek';
+
+			}else if(Liczba === 3){
+
+				NumerDnia = 'Trzeci';
+				NazwaDnia = 'Wednesday - środa';
+
+			}else if(Liczba === 4){
+
+				NumerDnia = 'Czwarty';
+				NazwaDnia = 'Thursday - czwartek';
+
+			}else if(Liczba === 5){
+
+				NumerDnia = 'Piąty';
+				NazwaDnia = 'Friday - piątek, piąteczek, piątunio';
+
+				wynikElement.style.color = 'yellow';
+
+			}else if(Liczba === 6){
+
+				NumerDnia = 'Szósty';
+				NazwaDnia = 'Saturday - sobota';
+
+				wynikElement.style.color = 'green';
+
+			}else if(Liczba === 7){
+
+				NumerDnia = 'Siódmy';
+				NazwaDnia = 'Sunday - niedziela';
+
+				wynikElement.style.color = 'green';
+
+			}
+
+			document.getElementById('wynik').textContent = NumerDnia +" Dzień tygodnia to " + NazwaDnia;
+
 		}
 
-	</script>
-
+	</script>			
+           
 </body>
 </html>
