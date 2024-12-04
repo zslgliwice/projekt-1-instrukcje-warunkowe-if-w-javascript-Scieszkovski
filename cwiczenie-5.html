@@ -11,19 +11,43 @@
 
 <body>
 
-	<label> Którą bramkę wybierasz: <input type="number" id="bramka"> </label>
+	<label> Którą bramkę wybierasz (1-3): <input type="number" id="bramka"> </label>
 
 	<input type="submit" value="Wybieram bramkę" onclick="teleturniej()">
 
 	<div id="wynik"></div>
-	
+
 	<script>
 	
 		function teleturniej()
 		{
 			var lucky = Math.floor(Math.random() * 3) + 1;
+
+			const wybrana = parseInt(document.getElementById('bramka').value);
+
+			/*if(wybrana < 1 || wybrana > 3){
+
+				document.getElementById('wynik').textContent = "Wpisz poprawną liczbę (1-3)"
+
+			}else if(wybrana === lucky){
+
+				document.getElementById('wynik').textContent = "Hurra! W bramce nr: " + lucky + " jest samochód!"
+
+			}else{
+
+				document.getElementById('wynik').textContent = "Niestety! Samochód znajdował się w bramce nr " + lucky;
+
+			}*/
+
+			
+			var wynik = (wybrana < 1 || wybrana > 3) ? "Wpisz poprawną liczbę (1-3)" : (wybrana === lucky) ? "Hurra! W bramce nr " + lucky + " jest samochód!" : "Niestety! Samochód znajdował się w bramce nr " + lucky;
+
+			document.getElementById('wynik').textContent = wynik;
+
 			
 		}
+			
+		
 
 	</script>
 
